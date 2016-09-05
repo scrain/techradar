@@ -1,0 +1,46 @@
+# Grails Backed Implementation of a Thoughtworks Style Technology Radar
+
+This was created as an exercise to become more familiar with the Grails
+http://docs.grails.org/latest/guide/introduction.html#webApiAndAngularProfiles[REST API,
+AngularJS Profiles] and http://views.grails.org/latest/#_json_views[JSON Views].   Starting
+with a fork JavaScript based https://github.com/bdargan/techradar[techradar project]
+created by https://github.com/bdargan[bdargan], this project adds a data driven REST service
+behind the UI.
+
+## Rough Implementation Steps
+
+* Created a starting application: `./grailsw create-app techradar --profile=angular`
+
+* Created Radar, Quadrant and Item domains: `./grailsw create-domain-resource [name]`
+
+* After filling in their properties, generated all the views and controller implementations:
+`./grailsw general-all "*"`
+
+* Generated all the scaffolding based AngularJS CRUD screens for the domains:
+`./grailsw ng-generate-all [name] true`
+
+* Folded in the original project's JavaScript libraries into the Grails project structure.
+
+* Replaced static `radarData.js` file with JSON View based REST Service:
+
+** To match the structure of the original static data, a custom JSON view was created
+`showData.gson` as well as custom templates for the Quadrant and Item domains.
+
+[source,groovy]
+.grails-app/views/radar/showData.gson
+----
+include::grails-app/views/radar/showData.gson[]
+----
+
+[source,groovy]
+.grails-app/views/radar/_quadrant.gson
+----
+include::grails-app/views/radar/_quadrant.gson[]
+----
+
+[source,groovy]
+.grails-app/views/radar/_item.gson
+----
+include::grails-app/views/radar/_item.gson[]
+----
+
