@@ -57,7 +57,7 @@ model {
 }
 
 json g.render(radar, [ excludes: ['quadrants']]) {
-    quadrants g.render( template: 'quadrant', collection: radar.quadrants.sort { it.name }, var: 'quadrant')
+    quadrants g.render( template: 'quadrant', collection: radar.quadrants, var: 'quadrant')
 }
 ----
 //TODO: once github supports includes: include::grails-app/views/radar/showData.gson[]
@@ -73,7 +73,7 @@ model {
 
 json g.render(quadrant, [includes: ['color'], expand: ['items'] ]) {
     'quadrant' quadrant.name
-    items g.render( template: 'item', collection: quadrant.items.sort { it.name }, var: 'item')
+    items g.render( template: 'item', collection: quadrant.items, var: 'item')
 }
 ----
 //TODO: once github supports includes: include::grails-app/views/radar/_quadrant.gson[]

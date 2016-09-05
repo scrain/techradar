@@ -6,5 +6,5 @@ model {
 
 json g.render(quadrant, [includes: ['color'], expand: ['items'] ]) {
     'quadrant' quadrant.name
-    items g.render( template: 'item', collection: quadrant.items.sort { it.name }, var: 'item')
+    items g.render( template: 'item', collection: quadrant.items, var: 'item')
 }
