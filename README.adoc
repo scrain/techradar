@@ -13,15 +13,15 @@ image::screenshot.png[Screenshot]
 
 ## Rough Implementation Steps
 
-. Created a starting application: `./grailsw create-app techradar --profile=angular`
+. Created a starting application: `grails create-app techradar --profile=angular`
 
-. Created Radar, Quadrant and Item domains: `./grailsw create-domain-resource [name]`
+. Created Radar, Quadrant and Item domains: `grails create-domain-resource [name]`
 
 . After filling in their properties, generated all the views and controller implementations:
-`./grailsw generate-all "*"`
+`grails generate-all "*"`
 
 . Generated all the scaffolding based AngularJS CRUD screens for the domains:
-`./grailsw ng-generate-all [name] true`
+`grails ng-generate-all [name] true`
 
 . Folded in the original project's JavaScript libraries into the Grails project structure (`radar.js`, `utils.js`,
 in addition to lodash.underscore and protovis libraries).
