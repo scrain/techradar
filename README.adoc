@@ -53,7 +53,7 @@ to be rendered.
 import techradar.Radar
 
 model {
-	Radar radar
+    Radar radar
 }
 
 json g.render(radar, [ excludes: ['quadrants']]) {
