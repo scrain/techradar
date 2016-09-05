@@ -1,0 +1,7 @@
+import techradar.Radar
+
+model {
+	Radar radar
+}
+
+json tmpl.radar(radar)

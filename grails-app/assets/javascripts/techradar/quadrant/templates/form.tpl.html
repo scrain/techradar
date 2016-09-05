@@ -1,0 +1,24 @@
+<fieldset class="form">
+  <div class="fieldcontain required">
+    <label for="name">Name
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="name" id="name" ng-model="vm.quadrant.name" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="color">Color
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="color" id="color" ng-model="vm.quadrant.color" type="text" />
+  </div>
+  <div class="fieldcontain">
+    <label for="items">Items</label>
+    <a ui-sref="item.create({quadrantId: vm.quadrant.id})">Add Item</a>
+  </div>
+  <div class="fieldcontain required">
+    <label for="radar">Radar
+      <span class="required-indicator">*</span>
+    </label>
+    <select required="" name="radar" id="radar" ng-model="vm.quadrant.radar" ng-options="radar for radar in vm.radarList track by radar.id"></select>
+  </div>
+</fieldset>

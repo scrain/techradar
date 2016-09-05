@@ -1,0 +1,8 @@
+import techradar.Quadrant
+
+model {
+	Iterable<Quadrant> quadrantList
+}
+
+json tmpl.quadrant(quadrantList ?: [])
+

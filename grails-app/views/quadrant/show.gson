@@ -1,0 +1,7 @@
+import techradar.Quadrant
+
+model {
+	Quadrant quadrant
+}
+
+json tmpl.quadrant(quadrant)

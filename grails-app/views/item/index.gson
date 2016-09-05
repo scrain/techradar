@@ -1,0 +1,8 @@
+import techradar.Item
+
+model {
+	Iterable<Item> itemList
+}
+
+json tmpl.item(itemList ?: [])
+

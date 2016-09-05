@@ -1,0 +1,7 @@
+import techradar.Item
+
+model {
+	Item item
+}
+
+json tmpl.item(item)

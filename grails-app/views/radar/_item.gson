@@ -1,0 +1,12 @@
+import techradar.Item
+
+model {
+    Item item
+}
+
+json g.render(item, [includes: ['name', 'movement']]) {
+    pc {
+        r item.radialCoordinate
+        t item.angularCoordinate
+    }
+}

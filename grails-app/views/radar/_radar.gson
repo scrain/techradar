@@ -1,0 +1,7 @@
+import techradar.Radar
+
+model {
+	Radar radar
+}
+
+json g.render(radar, [expand: ['quadrants']])

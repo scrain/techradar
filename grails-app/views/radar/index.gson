@@ -1,0 +1,8 @@
+import techradar.Radar
+
+model {
+	Iterable<Radar> radarList
+}
+
+json tmpl.radar(radarList ?: [])
+

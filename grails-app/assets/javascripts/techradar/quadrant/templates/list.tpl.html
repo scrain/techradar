@@ -1,0 +1,46 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a ui-sref="quadrant.create" class="create">New Quadrant</a></li>
+    </ul>
+</div>
+<div id="list-quadrant" class="content scaffold-list" role="main">
+    <h1>Quadrant List</h1>
+    <table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Color</th>
+      <th>Items</th>
+      <th>Radar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="quadrant in vm.quadrantList">
+      <td>
+        <a ui-sref="quadrant.show({id: quadrant.id})">{{quadrant.id}}</a>
+      </td>
+      <td>
+        <span>{{quadrant.name}}</span>
+      </td>
+      <td>
+        <span>{{quadrant.color}}</span>
+      </td>
+      <td>
+        <ul>
+          <li ng-repeat="item in quadrant.items">
+            <a ui-sref="item.show({id: item.id})">{{item.toString()}}</a>
+          </li>
+        </ul>
+      </td>
+      <td>
+        <a ui-sref="radar.show({id: quadrant.radar.id})">{{quadrant.radar.toString()}}</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+    <!--    <div class="pagination">
+            <g:paginate total="${partCount ?: 0}" />
+        </div>-->
+</div>

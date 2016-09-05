@@ -1,0 +1,37 @@
+<fieldset class="form">
+  <div class="fieldcontain required">
+    <label for="name">Name
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="name" id="name" ng-model="vm.item.name" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="movement">Movement
+      <span class="required-indicator">*</span>
+    </label>
+    <select required="" name="movement" id="movement" ng-model="vm.item.movement">
+      <option value="a">a</option>
+      <option value="t">t</option>
+      <option value="c">c</option>
+      <option value="h">h</option>
+    </select>
+  </div>
+  <div class="fieldcontain required">
+    <label for="radialCoordinate">Radial Coordinate
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="radialCoordinate" id="radialCoordinate" ng-model="vm.item.radialCoordinate" type="number" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="angularCoordinate">Angular Coordinate
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="angularCoordinate" id="angularCoordinate" ng-model="vm.item.angularCoordinate" type="number" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="quadrant">Quadrant
+      <span class="required-indicator">*</span>
+    </label>
+    <select required="" name="quadrant" id="quadrant" ng-model="vm.item.quadrant" ng-options="quadrant for quadrant in vm.quadrantList track by quadrant.id"></select>
+  </div>
+</fieldset>

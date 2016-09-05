@@ -1,0 +1,9 @@
+import techradar.Radar
+
+model {
+	Radar radar
+}
+
+json g.render(radar, [ excludes: ['quadrants']]) {
+    quadrants g.render( template: 'quadrant', collection: radar.quadrants, var: 'quadrant')
+}

@@ -1,0 +1,10 @@
+import techradar.Quadrant
+
+model {
+    Quadrant quadrant
+}
+
+json g.render(quadrant, [includes: ['color'], expand: ['items'] ]) {
+    'quadrant' quadrant.name
+    items g.render( template: 'item', collection: quadrant.items, var: 'item')
+}

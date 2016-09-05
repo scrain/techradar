@@ -1,0 +1,33 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><h2>Radars</h2></li>
+        <li><a ui-sref="radar.create" class="create">New</a></li>
+    </ul>
+</div>
+<div id="list-radar" class="content scaffold-list" role="main">
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Quadrants</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="radar in vm.radarList">
+            <td>
+                <a ui-sref="radar.show({id: radar.id})">{{radar.name}}</a>
+            </td>
+            <td>
+                <ul>
+                    <li ng-repeat="quadrant in radar.quadrants">
+                        <a ui-sref="quadrant.show({id: quadrant.id})">{{quadrant.toString()}}</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <!--    <div class="pagination">
+            <g:paginate total="${partCount ?: 0}" />
+        </div>-->
+</div>
