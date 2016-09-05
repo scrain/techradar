@@ -25,7 +25,6 @@ function RadarShowController(Radar, $stateParams, $state, $resource) {
     var w = 1200;
     var radar_data = $resource('/radar_data/:radarId').get({radarId: $stateParams.id});
     radar_data.$promise.then(function(data) {
-        init(h, w, radar_data);
+        init(h, w, data);
     });
-
 }
