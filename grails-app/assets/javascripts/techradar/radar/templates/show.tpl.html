@@ -1,31 +1,8 @@
-<!--<div class="nav" role="navigation">-->
-<!--<ul>-->
-<!--<li><a ui-sref="index" class="home">Home</a></li>-->
-<!--<li><a class="list" ui-sref="radar.list" class="list">Radar List</a></li>-->
-<!--<li><a class="create" ui-sref="radar.create" class="create">New Radar</a></li>-->
-<!--</ul>-->
-<!--</div>-->
+<div class="buttons">
+    <a class="edit" ui-sref="radar.edit({id: vm.radar.id})">Edit</a>  
+</div>
 <div id="show-part" class="content scaffold-show" role="main">
-    <ol class="property-list radar">
-        <li class="fieldcontain">
-            <span id="quadrants-label" class="property-label">Quadrants</span>
-            <div class="property-value" aria-labelledby="quadrants-label">
-                <ul>
-                    <li ng-repeat="quadrant in vm.radar.quadrants">
-                        <a ui-sref="quadrant.show({id: quadrant.id})">{{quadrant.toString()}}</a>
-                    </li>
-                </ul>
-            </div>
-        </li>
-    </ol>
-    <form ng-submit="vm.delete()">
-        <h1>Radar: {{vm.radar.name}}</h1>
-        <fieldset class="buttons">
-            <a class="edit" ui-sref="radar.edit({id: vm.radar.id})">Edit</a>
-            <input class="delete" type="submit" value="Delete" onclick="return confirm('Are you sure?');"/>
-        </fieldset>
-    </form>
+    <h1>{{vm.radar.name}}</h1>
 
-    <h1 id="title" style="text-align: center;"></h1>
     <div id="radar"></div>
 </div>

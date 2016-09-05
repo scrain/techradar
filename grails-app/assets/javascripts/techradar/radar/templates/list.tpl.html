@@ -1,10 +1,10 @@
 <div class="nav" role="navigation">
     <ul>
-        <li><h2>Radars</h2></li>
-        <li><a ui-sref="radar.create" class="create">New</a></li>
+        <li><a ui-sref="radar.create" class="create">New Radar</a></li>
     </ul>
 </div>
 <div id="list-radar" class="content scaffold-list" role="main">
+    <h2>Radar List<span class="nav"><a ui-sref="radar.create" class="create">New Radar</a></span></h2>
     <table>
         <thead>
         <tr>
@@ -17,7 +17,7 @@
             <td>
                 <a ui-sref="radar.show({id: radar.id})">{{radar.name}}</a>
             </td>
-            <td>
+\            <td>
                 <ul>
                     <li ng-repeat="quadrant in radar.quadrants">
                         <a ui-sref="quadrant.show({id: quadrant.id})">{{quadrant.toString()}}</a>

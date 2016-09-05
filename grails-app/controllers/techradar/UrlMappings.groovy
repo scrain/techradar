@@ -12,7 +12,8 @@ class UrlMappings {
 
         get "/${controller}_data/$id(.$format)?"(action:"showData")
 
-        "/"(view: '/index')
+        "/"(view:'/index') // (controller: 'radar', action: 'show', id: '1')
+
         "500"(view: '/error')
         "404"(view: '/notFound')
     }

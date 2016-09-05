@@ -6,14 +6,18 @@
     <input required="" name="name" id="name" ng-model="vm.item.name" type="text" />
   </div>
   <div class="fieldcontain required">
+    <label for="url">Url
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="url" id="url" ng-model="vm.item.url" type="text" />
+  </div>
+  <div class="fieldcontain required">
     <label for="movement">Movement
       <span class="required-indicator">*</span>
     </label>
     <select required="" name="movement" id="movement" ng-model="vm.item.movement">
-      <option value="a">a</option>
-      <option value="t">t</option>
-      <option value="c">c</option>
-      <option value="h">h</option>
+      <option value="t">moved</option>
+      <option value="c">held</option>
     </select>
   </div>
   <div class="fieldcontain required">
@@ -27,11 +31,5 @@
       <span class="required-indicator">*</span>
     </label>
     <input required="" name="angularCoordinate" id="angularCoordinate" ng-model="vm.item.angularCoordinate" type="number" />
-  </div>
-  <div class="fieldcontain required">
-    <label for="quadrant">Quadrant
-      <span class="required-indicator">*</span>
-    </label>
-    <select required="" name="quadrant" id="quadrant" ng-model="vm.item.quadrant" ng-options="quadrant for quadrant in vm.quadrantList track by quadrant.id"></select>
   </div>
 </fieldset>

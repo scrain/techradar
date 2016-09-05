@@ -4,7 +4,6 @@
 //= require /angular/angular-resource
 //= require /techradar/core/techradar.core
 //= require /techradar/item/techradar.item
-//= require /techradar/radar/techradar.radar
 //= require_self
 //= require_tree services
 //= require_tree controllers
@@ -16,8 +15,7 @@ angular.module("techradar.quadrant", [
     "ui.router",
     "ngResource",
     "techradar.core",
-    "techradar.item",
-    "techradar.radar"
+    "techradar.item"
 ]).config(config);
 
 function config($stateProvider) {
@@ -34,7 +32,6 @@ function config($stateProvider) {
         })
         .state('quadrant.create', {
             url: "/create",
-            params: {"radarId":null},
             templateUrl: "/techradar/quadrant/create.html",
             controller: "QuadrantCreateController as vm"
         })

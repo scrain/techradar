@@ -13,12 +13,6 @@
   </div>
   <div class="fieldcontain">
     <label for="items">Items</label>
-    <a ui-sref="item.create({quadrantId: vm.quadrant.id})">Add Item</a>
-  </div>
-  <div class="fieldcontain required">
-    <label for="radar">Radar
-      <span class="required-indicator">*</span>
-    </label>
-    <select required="" name="radar" id="radar" ng-model="vm.quadrant.radar" ng-options="radar for radar in vm.radarList track by radar.id"></select>
+    <select name="items" id="items" ng-model="vm.quadrant.items" ng-options="item for item in vm.itemList track by item.id" multiple=""></select>
   </div>
 </fieldset>

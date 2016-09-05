@@ -7,6 +7,6 @@
   </div>
   <div class="fieldcontain">
     <label for="quadrants">Quadrants</label>
-    <a ui-sref="quadrant.create({radarId: vm.radar.id})">Add Quadrant</a>
+    <select name="quadrants" id="quadrants" ng-model="vm.radar.quadrants" ng-options="quadrant for quadrant in vm.quadrantList track by quadrant.id" multiple=""></select>
   </div>
 </fieldset>

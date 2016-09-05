@@ -11,8 +11,6 @@ class Quadrant {
 
     static hasMany = [items: Item]
 
-    static belongsTo = [radar:Radar]
-
     static constraints = {
         name  unique: true, blank: false
         color blank: false

@@ -1,10 +1,9 @@
 //= wrapped
-//= require /jquery/jquery
 //= require /protovis/protovis-d3.2
 //= require /utils
 //= require /lodash.underscore.min
 //= require /radar
-//= require /angular/angular 
+//= require /angular/angular
 //= require /angular/angular-ui-router
 //= require /angular/angular-resource
 //= require /techradar/core/techradar.core

@@ -9,17 +9,17 @@ class Item {
 
     String movement
 
+    String url
+
     Integer radialCoordinate
     Integer angularCoordinate
 
-    static belongsTo = [quadrant: Quadrant]
-
     static constraints = {
         name     unique: true, blank: false
-        movement blank: false, inList: ['a', 't', 'c', 'h']
+        url      nullable: true
+        movement blank: false, inList: ['t', 'c',]
         radialCoordinate()
         angularCoordinate()
-        quadrant()
     }
 
     static mapping = {

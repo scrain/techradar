@@ -5,5 +5,5 @@ model {
 }
 
 json g.render(radar, [ excludes: ['quadrants']]) {
-    quadrants g.render( template: 'quadrant', collection: radar.quadrants, var: 'quadrant')
+    quadrants g.render( template: 'quadrant', collection: radar.quadrants.sort { it.name }, var: 'quadrant')
 }

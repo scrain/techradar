@@ -4,16 +4,11 @@ angular
     .module("techradar.quadrant")
     .controller("QuadrantCreateController", QuadrantCreateController);
 
-function QuadrantCreateController(Quadrant, $state, $stateParams, Item, Radar) {
+function QuadrantCreateController(Quadrant, $state, Item) {
 
     var vm = this;
     vm.itemList = Item.list();
-    vm.radarList = Radar.list();
     vm.quadrant = new Quadrant();
-    
-    if ($stateParams.radarId) {
-        vm.quadrant.radar = {id: $stateParams.radarId};
-    }
     
     vm.saveQuadrant = function() {
         vm.errors = undefined;

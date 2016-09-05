@@ -4,7 +4,7 @@ model {
     Item item
 }
 
-json g.render(item, [includes: ['name', 'movement']]) {
+json g.render(item, [includes: ['name', 'movement', 'url']]) {
     pc {
         r item.radialCoordinate
         t item.angularCoordinate

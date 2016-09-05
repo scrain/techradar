@@ -4,10 +4,10 @@ angular
     .module("techradar.item")
     .controller("ItemEditController", ItemEditController);
 
-function ItemEditController(Item, $stateParams, $state, Quadrant) {
+function ItemEditController(Item, $stateParams, $state) {
     var vm = this;
 
-    vm.quadrantList = Quadrant.list();
+    
 
     Item.get({id: $stateParams.id}, function(data) {
         vm.item = new Item(data);

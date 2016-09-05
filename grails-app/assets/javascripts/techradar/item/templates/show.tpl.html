@@ -1,17 +1,21 @@
 <div class="nav" role="navigation">
     <ul>
-        <li><a ui-sref="index" class="home">Home</a></li>
-        <li><a class="list" ui-sref="item.list" class="list">Item List</a></li>
         <li><a class="create" ui-sref="item.create" class="create">New Item</a></li>
     </ul>
 </div>
 <div id="show-part" class="content scaffold-show" role="main">
-    <h1>Show Item</h1>
+    <h1>Radar Item</h1>
     <ol class="property-list item">
   <li class="fieldcontain">
     <span id="name-label" class="property-label">Name</span>
     <div class="property-value" aria-labelledby="name-label">
       <span>{{vm.item.name}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="url-label" class="property-label">Url</span>
+    <div class="property-value" aria-labelledby="url-label">
+      <span>{{vm.item.url}}</span>
     </div>
   </li>
   <li class="fieldcontain">
@@ -30,12 +34,6 @@
     <span id="angularCoordinate-label" class="property-label">Angular Coordinate</span>
     <div class="property-value" aria-labelledby="angularCoordinate-label">
       <span>{{vm.item.angularCoordinate}}</span>
-    </div>
-  </li>
-  <li class="fieldcontain">
-    <span id="quadrant-label" class="property-label">Quadrant</span>
-    <div class="property-value" aria-labelledby="quadrant-label">
-      <a ui-sref="quadrant.show({id: vm.item.quadrant.id})">{{vm.item.quadrant.toString()}}</a>
     </div>
   </li>
 </ol>

@@ -5,13 +5,13 @@ angular
     .module("techradar.item")
     .factory("Item", Item);
 
-function Item($resource, domainListConversion, domainConversion) {
+function Item($resource) {
     var Item = $resource(
         "item/:id",
         {"id": "@id"},
         {"update": {method: "PUT"},
-         "query": {method: "GET", isArray: true, transformResponse: [angular.fromJson, domainListConversion("Quadrant", "quadrant", "domainConversion")]},
-         "get": {method: 'GET', transformResponse: [angular.fromJson, domainConversion("Quadrant", "quadrant")]}}
+         "query": {method: "GET", isArray: true},
+         "get": {method: 'GET'}}
     );
 
     Item.list = Item.query;

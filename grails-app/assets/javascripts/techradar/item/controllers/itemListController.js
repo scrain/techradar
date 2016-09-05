@@ -7,7 +7,7 @@ angular
 function ItemListController(Item) {
     var vm = this;
 
-    var max = 10, offset = 0;
+    var max = 200, offset = 0;
 
     Item.list({max: max, offset: offset}, function(data) {
         vm.itemList = data;

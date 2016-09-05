@@ -4,15 +4,11 @@ angular
     .module("techradar.item")
     .controller("ItemCreateController", ItemCreateController);
 
-function ItemCreateController(Item, $state, $stateParams, Quadrant) {
+function ItemCreateController(Item, $state) {
 
     var vm = this;
-    vm.quadrantList = Quadrant.list();
-    vm.item = new Item();
     
-    if ($stateParams.quadrantId) {
-        vm.item.quadrant = {id: $stateParams.quadrantId};
-    }
+    vm.item = new Item();
     
     vm.saveItem = function() {
         vm.errors = undefined;

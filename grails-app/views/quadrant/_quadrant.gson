@@ -4,9 +4,4 @@ model {
 	Quadrant quadrant
 }
 
-json g.render(quadrant, [expand: ['items'], excludes: ['radar']]) {
-	radar {
-		id 		quadrant.radar.id
-		name 	quadrant.radar.name
-	}
-}
+json g.render(quadrant, [expand: ['items']])

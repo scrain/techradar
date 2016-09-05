@@ -4,11 +4,10 @@ angular
     .module("techradar.quadrant")
     .controller("QuadrantEditController", QuadrantEditController);
 
-function QuadrantEditController(Quadrant, $stateParams, $state, Item, Radar) {
+function QuadrantEditController(Quadrant, $stateParams, $state, Item) {
     var vm = this;
 
     vm.itemList = Item.list();
-    vm.radarList = Radar.list();
 
     Quadrant.get({id: $stateParams.id}, function(data) {
         vm.quadrant = new Quadrant(data);

@@ -1,12 +1,10 @@
-<div class="nav" role="navigation">
-    <ul>
-        <li><a ui-sref="index" class="home">Home</a></li>
-        <li><a class="list" ui-sref="quadrant.list" class="list">Quadrant List</a></li>
-        <li><a class="create" ui-sref="quadrant.create" class="create">New Quadrant</a></li>
-    </ul>
-</div>
+<!--<div class="nav" role="navigation">-->
+    <!--<ul>-->
+        <!--<li><a class="create" ui-sref="quadrant.create" class="create">New Quadrant</a></li>-->
+    <!--</ul>-->
+<!--</div>-->
 <div id="show-part" class="content scaffold-show" role="main">
-    <h1>Show Quadrant</h1>
+    <h1>Radar Quadrant</h1>
     <ol class="property-list quadrant">
   <li class="fieldcontain">
     <span id="name-label" class="property-label">Name</span>
@@ -30,17 +28,11 @@
       </ul>
     </div>
   </li>
-  <li class="fieldcontain">
-    <span id="radar-label" class="property-label">Radar</span>
-    <div class="property-value" aria-labelledby="radar-label">
-      <a ui-sref="radar.show({id: vm.quadrant.radar.id})">{{vm.quadrant.radar.toString()}}</a>
-    </div>
-  </li>
 </ol>
     <form ng-submit="vm.delete()">
         <fieldset class="buttons">
             <a class="edit" ui-sref="quadrant.edit({id: vm.quadrant.id})">Edit</a>
-            <input class="delete" type="submit" value="Delete" onclick="return confirm('Are you sure?');" />
+            <!--<input class="delete" type="submit" value="Delete" onclick="return confirm('Are you sure?');" />-->
         </fieldset>
     </form>
 </div>
