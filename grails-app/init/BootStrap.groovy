@@ -11,7 +11,7 @@ class BootStrap {
         Quadrant languages  = new Quadrant(name: "Languages",  color: '#B70062').save(failOnError: true)
 
         Radar myRadar = new Radar(
-            name: "Thoughtworks Technology Radar",
+            name: "Thoughtworks Technology Radar August 2010",
             quadrants: [techniques, tools, platforms, languages]
         ).save(failOnError: true)
 

@@ -7,6 +7,10 @@ with a fork JavaScript based https://github.com/bdargan/techradar[techradar proj
 created by https://github.com/bdargan[bdargan], this project adds a data driven REST service
 behind the UI.
 
+## Screenshot
+image::screenshot.png[Screenshot]
+
+
 ## Rough Implementation Steps
 
 * Created a starting application: `./grailsw create-app techradar --profile=angular`
