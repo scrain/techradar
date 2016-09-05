@@ -13,38 +13,102 @@ image::screenshot.png[Screenshot]
 
 ## Rough Implementation Steps
 
-* Created a starting application: `./grailsw create-app techradar --profile=angular`
+. Created a starting application: `./grailsw create-app techradar --profile=angular`
 
-* Created Radar, Quadrant and Item domains: `./grailsw create-domain-resource [name]`
+. Created Radar, Quadrant and Item domains: `./grailsw create-domain-resource [name]`
 
-* After filling in their properties, generated all the views and controller implementations:
-`./grailsw general-all "*"`
+. After filling in their properties, generated all the views and controller implementations:
+`./grailsw generate-all "*"`
 
-* Generated all the scaffolding based AngularJS CRUD screens for the domains:
+. Generated all the scaffolding based AngularJS CRUD screens for the domains:
 `./grailsw ng-generate-all [name] true`
 
-* Folded in the original project's JavaScript libraries into the Grails project structure.
+. Folded in the original project's JavaScript libraries into the Grails project structure (`radar.js`, `utils.js`,
+in addition to lodash.underscore and protovis libraries).
 
-* Replaced static `radarData.js` file with JSON View based REST Service:
+. Replaced original project's static `radarData.js` file with JSON View based REST Service:
 
-** To match the structure of the original static data, a custom JSON view was created
-`showData.gson` as well as custom templates for the Quadrant and Item domains.
+.. Added `RadarController.showData` for the new data API.
+
+.. To match the structure of the original static data, a custom JSON view was created
+`showData.gson` which included customized templates for the Quadrant and Item domains.
+
+.. Added call to new REST API to read data in the customized format and pass to call
+to initialize the radar in `radarShowContoller.js`
+
+.. Added `<div id="radar"></div>` to the Radar domain's Angular template `show.tpl.html` for the radar
+to be rendered.
+
+[source,groovy]
+.grails-app/controllers/techradar/RadarController.groovy
+----
+    def showData(Radar radar) {
+        respond radar, view: 'showData'
+    }
+----
 
 [source,groovy]
 .grails-app/views/radar/showData.gson
 ----
-include::grails-app/views/radar/showData.gson[]
+import techradar.Radar
+
+model {
+	Radar radar
+}
+
+json g.render(radar, [ excludes: ['quadrants']]) {
+    quadrants g.render( template: 'quadrant', collection: radar.quadrants.sort { it.name }, var: 'quadrant')
+}
 ----
+//TODO: once github supports includes: include::grails-app/views/radar/showData.gson[]
 
 [source,groovy]
 .grails-app/views/radar/_quadrant.gson
 ----
-include::grails-app/views/radar/_quadrant.gson[]
+import techradar.Quadrant
+
+model {
+    Quadrant quadrant
+}
+
+json g.render(quadrant, [includes: ['color'], expand: ['items'] ]) {
+    'quadrant' quadrant.name
+    items g.render( template: 'item', collection: quadrant.items.sort { it.name }, var: 'item')
+}
 ----
+//TODO: once github supports includes: include::grails-app/views/radar/_quadrant.gson[]
 
 [source,groovy]
 .grails-app/views/radar/_item.gson
 ----
-include::grails-app/views/radar/_item.gson[]
+import techradar.Item
+
+model {
+    Item item
+}
+
+json g.render(item, [includes: ['name', 'movement', 'url']]) {
+    pc {
+        r item.radialCoordinate
+        t item.angularCoordinate
+    }
+}
+----
+//TODO: once github supports includes: include::grails-app/views/radar/_item.gson[]
+
+[source,javascript]
+.grails-app/assets/javascripts/techradar/radar/controllers/radarShowController.js
+----
+    var h = 1000;
+    var w = 1200;
+    var radar_data = $resource('/radar_data/:radarId').get({radarId: $stateParams.id});
+    radar_data.$promise.then(function(data) {
+        init(h, w, data);
+    });
 ----
 
+## References
+ * https://grails.org/[Grails Framework]
+ * http://views.grails.org[Grails Views]
+ * https://grails-plugins.github.io/grails-angular-scaffolding/latest[Angular Scaffolding Plugin]
+ * https://www.thoughtworks.com/radar[Thoughtworks Technology Radar]
