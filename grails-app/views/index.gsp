@@ -19,6 +19,7 @@
     <script type="text/javascript">
         window.contextPath = "${request.contextPath}";
     </script>
+    <script src="static/javascript/vendor/protovis/protovis-d3.2.js"></script>
 </head>
 
 <body ng-app="techradar" ng-controller="IndexController as indexCtrl">

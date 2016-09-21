@@ -1,5 +1,4 @@
 //= wrapped
-//= require /protovis/protovis-d3.2
 //= require /utils
 //= require /lodash.underscore.min
 //= require /radar
