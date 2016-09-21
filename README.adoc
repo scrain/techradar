@@ -7,8 +7,10 @@ with a fork JavaScript based https://github.com/bdargan/techradar[techradar proj
 created by https://github.com/bdargan[bdargan], this project adds a data driven REST service
 behind the rendered radar.
 
-The radar data is loaded during application startup from
+The radar data can be modified by editing
 link:grails-app/init/BootStrap.groovy[BootStrap.groovy].
+
+To run, clone the project and start the app with `./gradlew bootRun` and then navigate to link:http:\\localhost:8080[http:\\localhost:8080]
 
 ## Screenshot
 image::screenshot.png[Screenshot]
