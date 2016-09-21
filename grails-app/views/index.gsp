@@ -35,8 +35,8 @@
             </button>
             <a class="navbar-brand" href="/#">
                 <i class="fa grails-icon">
-                    <asset:image src="grails-cupsonly-logo-white.svg"/>
-                </i> Tech Radar App
+                    %{--<asset:image src="aura-logo.png"/>--}%
+                </i> AURA Technology Radar
             </a>
         </div>
 
