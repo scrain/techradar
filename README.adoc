@@ -8,7 +8,7 @@ created by https://github.com/bdargan[bdargan], this project adds a data driven 
 behind the rendered radar.
 
 The radar data is loaded during application startup from
-link:grails-app/init/techradar/BootStrap.groovy[BootStrap.groovy].
+link:grails-app/init/BootStrap.groovy[BootStrap.groovy].
 
 ## Screenshot
 image::screenshot.png[Screenshot]
