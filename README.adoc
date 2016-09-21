@@ -5,7 +5,10 @@ http://docs.grails.org/latest/guide/introduction.html#webApiAndAngularProfiles[R
 AngularJS Profiles] and http://views.grails.org/latest/#_json_views[JSON Views].   Starting
 with a fork JavaScript based https://github.com/bdargan/techradar[techradar project]
 created by https://github.com/bdargan[bdargan], this project adds a data driven REST service
-behind the UI.
+behind the rendered radar.
+
+The radar data is loaded during application startup from
+link:grails-app/init/techradar/BootStrap.groovy[BootStrap.groovy].
 
 ## Screenshot
 image::screenshot.png[Screenshot]
